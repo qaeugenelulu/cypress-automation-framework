@@ -2,7 +2,13 @@
 const { truncate } = require("lodash");
 
 describe("Test Contact Us form via automatioon test store", ()=>{
-
+    before(function(){
+       cy.fixture('example').then(function(data){
+         // this.data = data ;
+         globalThis.data = data; 
+       }
+       )
+   })
  it("Successfull submit of Contact US form", ()=>{
   
     cy.visit("https://www.automationteststore.com/");
@@ -14,8 +20,8 @@ describe("Test Contact Us form via automatioon test store", ()=>{
     ////a[contains(@href,'contact')]
     //cy.xpath("//a[contains(@href,'contact')]").click();
 
-    cy.get('#ContactUsFrm_first_name').type("John");
-    cy.get('#ContactUsFrm_email').type("John@ex.com");
+    cy.get('#ContactUsFrm_first_name').type(data.first_name);
+    cy.get('#ContactUsFrm_email').type(data.email);
     cy.get('#ContactUsFrm_email').should('have.attr','name','email');
     cy.get('#ContactUsFrm_enquiry').type("Do you prrovide additional discount on bulk orders");
     cy.get('button[title="Submit"]').click();

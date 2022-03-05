@@ -14,11 +14,11 @@ describe("Iterate over elements", () => {
     cy.visit("https://www.automationteststore.com/");
     cy.get("a[href*='product/category&path']").contains("Hair Care").click();
 
-    cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
-        if($el.text().includes('Eau Parfumee au The Vert Shampoo')){
-            cy.wrap($el).click();
-        }
-      });
-    
+    // cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
+    //     if($el.text().includes('Eau Parfumee au The Vert Shampoo')){
+    //         cy.wrap($el).click();
+    //     }
+    //   });
+    cy.selectProduct('Eau Parfumee au The Vert Shampoo');
   });
 });

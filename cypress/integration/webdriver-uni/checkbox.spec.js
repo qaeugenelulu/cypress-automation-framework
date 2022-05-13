@@ -2,8 +2,10 @@
 
 describe("Verrify checkboxes viad webdriver", () => {
     it("Check and validate checkboxes", () => {
-        cy.visit("http://www.webdriveruniversity.com")
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})
+        //cy.visit("http://www.webdriveruniversity.com")
+        cy.log(Cypress.env("name"));
+        cy.navigateTo();
+        //cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})
         
         //cy.get('#checkboxes > :nth-child(1) > input').check().should('be.checked');
         cy.get('[value="option-3"]').as('option3');

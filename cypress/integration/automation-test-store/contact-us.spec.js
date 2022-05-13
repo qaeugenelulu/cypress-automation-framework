@@ -3,6 +3,7 @@ const { truncate } = require("lodash");
 
 describe("Test Contact Us form via automatioon test store", ()=>{
     before(function(){
+       //cy.viewport(550,750)
        cy.fixture('example').then(function(data){
          // this.data = data ;
          globalThis.data = data; 

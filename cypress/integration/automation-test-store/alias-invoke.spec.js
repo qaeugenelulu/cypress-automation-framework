@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe("Alias and invoke", () => {
+describe("Alias and Invoke number1", () => {
 
     it("Validate a specific Hair care product", () => {
       cy.visit("https://www.automationteststore.com/");
